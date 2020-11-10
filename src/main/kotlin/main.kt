@@ -50,9 +50,38 @@ fun main(){
 
 
     // we can set a default is null is entered by mistake using "?:"
-    val number1 = readLine() ?: "0"
-    val number2 = readLine() ?: "0"
-    // the !! makes us assume we aren't going to have nulls
-    val result = number1!!.toInt() + number2!!.toInt()
-    println(result)
+//    val number1 = readLine() ?: "0"
+//    val number2 = readLine() ?: "0"
+//    // the !! makes us assume we aren't going to have nulls
+//    val result = number1!!.toInt() + number2!!.toInt()
+//    println(result)
+
+    val shoppingList = listOf("Car","Cannon","Castle")
+
+    val shoppingList2 = mutableListOf("Car2","Cannon2","Castle2")
+    shoppingList2.add("Coconut2")
+    println(shoppingList2[3])
+
+    var counter = 0
+    while (counter < shoppingList.size){
+        println(shoppingList[counter])
+        counter ++
+    }
+
+    for (shoppingItem in shoppingList){
+        println(shoppingItem)
+    }
+
+    for(i in 1..10){
+        println(i)
+    }
+
+    val whenVal = 3
+    when(whenVal){
+        in 1..2 -> println("x is between 1 and 2")
+        in 3..7 -> println("x is between 3 and 7")
+        else ->{
+            println("You won't find what you're looking for here")
+        }
+    }
 }

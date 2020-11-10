@@ -72,10 +72,6 @@ fun main(){
         println(shoppingItem)
     }
 
-    for(i in 1..10){
-        println(i)
-    }
-
     val whenVal = 3
     when(whenVal){
         in 1..2 -> println("x is between 1 and 2")
@@ -83,5 +79,35 @@ fun main(){
         else ->{
             println("You won't find what you're looking for here")
         }
+    }
+
+    print10Numbers()
+
+    println(isEven())
+
+    val evenCheck = isEven(10)
+    val oddCheck = 3
+    // you could also do this if you like to be specific "isEven(number = 10)"
+    println(evenCheck)
+    println(oddCheck.isOdd())
+
+    val dog = Animal("Fido")
+
+}
+
+// you must specify the type for parameters in a function
+// you can also set a default parameter
+fun isEven(number: Int = 5): Boolean {
+    return number % 2 == 0
+}
+
+// alternate way to write a function
+fun Int.isOdd(): Boolean{
+    return this % 2 != 0
+}
+
+fun print10Numbers(){
+    for(i in 1..10){
+        println(i)
     }
 }

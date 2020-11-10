@@ -33,4 +33,26 @@ fun main(){
     println(amIReallyAnAdultProgrammer)
     println(amIReallyReallyAnAdultProgrammer)
     println(amIReallyReallyReallyAnAdultProgrammer)
+
+    val string = "Kotlin is the best language after PHP"
+    println(string.toUpperCase())
+
+    val i = 1 + 1
+    if(i == 2){
+        println("i is 2")
+    }else if(i == 3){
+        println("i is 3")
+    }else{
+        println("Why are you wasting my time?")
+    }
+
+    val j = if(i == 2) 2 else 3
+
+
+    // we can set a default is null is entered by mistake using "?:"
+    val number1 = readLine() ?: "0"
+    val number2 = readLine() ?: "0"
+    // the !! makes us assume we aren't going to have nulls
+    val result = number1!!.toInt() + number2!!.toInt()
+    println(result)
 }

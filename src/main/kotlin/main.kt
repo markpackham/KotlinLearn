@@ -109,15 +109,37 @@ fun main(){
     bear.makeSound()
 
 
-    println("Please enter a number")
-    val numby = readLine() ?: "0"
-    val parsedNumber = try {
-        numby.toInt()
-    }catch (e: Exception){
-        // if user enters something that be converted to an Int provide 0
-        0
+//    println("Please enter a number")
+//    val numby = readLine() ?: "0"
+//    val parsedNumber = try {
+//        numby.toInt()
+//    }catch (e: Exception){
+//        // if user enters something that be converted to an Int provide 0
+//        0
+//    }
+//    println(parsedNumber)
+
+val list = listOf("Kotlin", "is", "fun")
+    // lambda functions use { } rather than ( )
+    /*
+    Lambda expressions and anonymous functions are 'function literals', i.e.
+    functions that are not declared, but passed immediately as an expression
+    https://kotlinlang.org/docs/reference/lambdas.html
+     */
+val count = list.count { currentString ->
+    // count how many string have 3 characters, answer "1" for "fun"
+    currentString.length == 3
+}
+    println(count)
+
+
+// we are calling a function we created called "customCount"
+// it is a generic function that can handle lists of any type
+    val count2 = list.customCount { currentString ->
+        // count how many string have 3 characters, answer "2"
+        currentString.length >= 3
     }
-    println(parsedNumber)
+    println(count2)
 
 }
 
@@ -140,4 +162,16 @@ fun print10Numbers(){
     for(i in 1..10){
         println(i)
     }
+}
+
+
+// T stands for Type since we are using Generics
+fun <T> List<T>.customCount(function: (T) -> Boolean): Int{
+    var counter = 0
+    for (stringy in this){
+        if(function(stringy)){
+            counter++
+        }
+    }
+    return counter
 }

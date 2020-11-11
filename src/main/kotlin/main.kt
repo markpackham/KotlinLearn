@@ -91,8 +91,19 @@ fun main(){
     println(evenCheck)
     println(oddCheck.isOdd())
 
-    val dog = Animal("Fido")
+//    val dog = Animal("Fido")
+    val dog2 = Dog()
+    dog2.makeSound()
 
+    val cat = Cat()
+    cat.makeSound()
+
+    // working with an anonymous Class
+    val bear = object : Animal("Yogi"){
+        override fun makeSound() {
+            println("Roar!")
+        }
+    }
 }
 
 // you must specify the type for parameters in a function

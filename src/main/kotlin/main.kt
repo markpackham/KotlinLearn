@@ -1,3 +1,5 @@
+import java.lang.Exception
+
 // Learn Kotlin from https://www.youtube.com/watch?v=5flXf8nuq60
 // It's like Java for lazy people often used to make Android apps
 fun main(){
@@ -104,7 +106,24 @@ fun main(){
             println("Roar!")
         }
     }
+    bear.makeSound()
+
+
+    println("Please enter a number")
+    val numby = readLine() ?: "0"
+    val parsedNumber = try {
+        numby.toInt()
+    }catch (e: Exception){
+        // if user enters something that be converted to an Int provide 0
+        0
+    }
+    println(parsedNumber)
+
 }
+
+
+
+// FUNCTIONS
 
 // you must specify the type for parameters in a function
 // you can also set a default parameter
